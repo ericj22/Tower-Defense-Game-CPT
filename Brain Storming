@@ -1,0 +1,39 @@
+1) The path
+	- Just apply a new movement algorithm to each enemy as they approach a turning area
+	- 
+2) The towers
+	- Different types
+		- Archer
+		- Mage
+		- Bomber
+		- 
+		- Maybe further subclass within each type of tower
+	- Different range, damage values, upgrades
+	- Enemy tracking
+	- 
+3) Enemies
+	- Create enemies at random areas within the width of the path, a couple pixels 
+	  back so they can "smoothly" walk into the screen
+	- Multiple waves(?)
+	- Different sizes
+	- Different types - health, weight in lives lost
+	- Health tracking
+4) Other random features
+	- Currency tracking
+	- Health tracking
+	- Powerups/abilities/special weapons
+5) Multiple levels and menus and crap
+	- Three different levels
+	- Level 1:
+		- Easiest, only basic towers, basic enemies
+	- Level 2:
+		- Medium, tier 2 towers, a bit harder enemies
+	- Level 3:
+		- Hard, tier 3 towers, hardest enemies
+	- 
+6) Opening menu
+	- Welcome screen of some sort of background involving the game and its characters and environment stuff
+	- Press play, loading screen(?) go to menu of levels
+7) Graphics
+	- Tower projectile animations
+	- Enemy walking animations
