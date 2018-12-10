@@ -1,3 +1,4 @@
+# Game Features:
 1) The path
 	- Just apply a new movement algorithm to each enemy as they approach a turning area
 	- 
@@ -19,8 +20,7 @@
 	- Different types - health, weight in lives lost
 	- Health tracking
 4) Other random features
-	- Currency tracking
-	- Health tracking
+	- Currency & currency tracking displayed in top left corner of screen
 	- Powerups/abilities/special weapons
 5) Multiple levels and menus and crap
 	- Three different levels
@@ -37,3 +37,29 @@
 7) Graphics
 	- Tower projectile animations
 	- Enemy walking animations
+
+
+# The actual programming:
+1) The path
+	- Just a simple function to draw the path
+	- A class with movement algorithms for each enemy
+	
+2) Towers
+	- A super class for all the towers, then sub classes for each individual kind of tower
+		- Contain details regarding their damage, building them, upgrades + cost, 
+
+3) Enemies
+	- A super class for the enemies, then sub classes for each type of enemy
+		- Contain details regarding health bar(floating on top), their damage to player health, their size, their movement speed
+	- Check for when an enemy is killed and update the money variable.
+		
+4) Other random features
+	- Health and currency just stored in a variable
+		- Displayed at the top, and whenever there is an update to the variable, update the graphic displaying the values
+	- Functions for the individual powerups/abilities
+
+5) Multiple levels and menus and crap
+	- Create a variable for if level is finished, or a function to test, maybe just in the update player health area
+	- Levels that come in waves(?)
+	- Levels have functions to draw them
+	- Variable containing what level it is, so movement algorithms, enemy spawns and tower upgrades are checked from there
