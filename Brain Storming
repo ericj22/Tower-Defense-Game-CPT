@@ -50,7 +50,8 @@
 
 3) Enemies
 	- A super class for the enemies, then sub classes for each type of enemy
-		- Contain details regarding health bar(floating on top), their damage to player health, their size, their movement speed
+		- Contain details regarding health bar(floating on top), their damage to player health, their size, 
+		  their movement speed, gold reward
 	- Check for when an enemy is killed and update the money variable.
 		
 4) Other random features
