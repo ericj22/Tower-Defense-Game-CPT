@@ -75,3 +75,5 @@ def findSlope(x1, y1, x2, y2):
     
 def findB(x, y, m):
     return y - (x*m)
+
+#Idea, try making it not a straight line, and just let the slope and y-intercept keep updating
