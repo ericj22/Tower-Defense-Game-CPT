@@ -297,22 +297,22 @@ def complete_level():
     """
     if level_one.is_game_over():
         fill(63, 19, 19)
-        rect(480, 370, 320, 180)
+        rect(480, 270, 320, 180)
         fill(255)
-        text("YOU LOSE", 580, 400)
-        rect(480, 480, 320, 70)
+        text("YOU LOSE", 580, 300)
+        rect(480, 380, 320, 70)
         fill(1, 1, 1)
-        text("QUIT", 500, 515)
+        text("QUIT", 500, 415)
 
     if level_one.is_level_passed():
         fill(63, 19, 19)
-        rect(480, 370, 320, 180)
+        rect(480, 270, 320, 180)
         fill(255)
         level_one.degree = starCalculator(level_one.lives)
         stars[0] = level_one.degree
-        text("YOU WIN", 580, 400)
-        text("Stars: " + str(level_one.degree), 580, 420)
-        rect(480, 480, 320, 70)
+        text("YOU WIN", 580, 300)
+        text("Stars: " + str(level_one.degree), 580, 320)
+        rect(480, 380, 320, 70)
         fill(1, 1, 1)
-        text("QUIT", 500, 515)
+        text("QUIT", 500, 415)
         level_one.completed = True
