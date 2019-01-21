@@ -12,7 +12,7 @@ class Red_Orc(Enemy):
         self.xLoc = xLoc
         self.yLoc = yLoc
         self.health = 380
-        self.weight = 1
+        self.weight = 2
         self.original_speed = 0.8
         self.speed = self.original_speed
         self.enemy_size = 20
