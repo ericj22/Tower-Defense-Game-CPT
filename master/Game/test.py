@@ -87,7 +87,7 @@ class Tester:
         self.circle.find_enemy(self.enemies)
         self.circle.target_enemy()
         assert self.circle.targetX == 115, "Target x should not change"
-        assert self.circle.targetY == 118, "Target y should increase"
+        assert self.circle.targetY == 117.5, "Target y should increase"
         self.ice_tower.xLoc = 800
         self.ice_tower.yLoc = 800
         self.enemies[0] = Yellow_Dwarf(750, 777)
