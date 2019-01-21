@@ -24,8 +24,8 @@ def setup():
     tester.test_tower()
     tester.test_enemy()
     tester.test_level_one()
+    
     regularFont = createFont("Lucida Sans Demibold", 12)
-
     tower_info = loadImage("tower_info.png")
     enemy_info = loadImage("enemy_info.png")
     tutorial_page_2 = loadImage("tutorial_part2.png")
@@ -49,6 +49,7 @@ def draw():
         textFont(defaultFont)
         text("Press the space bar to continue", 460, 680)
     elif room == 1:
+        textFont(defaultFont)
         image(map_img, 0, 0, 1280, 720)
         fill(255, 255, 120)
         drawing()
@@ -57,6 +58,7 @@ def draw():
         totalStarSum = sum(stars)
         text("Stars: " + str(totalStarSum), 1180, 100)
     elif room == 2:
+        textFont(defaultFont)
         levelStatus()
         starCalculatorTest()
         # levelStatusTest()
@@ -64,6 +66,7 @@ def draw():
         # reverseLevel()
         # starTesting()
         # Plays the level
+        textFont(regularFont)
         level_one.playing_level = True
         level_one.draw_level()
         level_one.spawn_enemies()
