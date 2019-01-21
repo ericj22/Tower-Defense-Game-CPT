@@ -9,7 +9,7 @@ from test import Tester
 from level_one import Level_One
 
 level_one = Level_One()
-levels = [1, 2, 3]
+levels = [1, 2, 3] #there are currently three levels, but more could be added to the list for future playability 
 room = 0
 levelRoom = 0
 stars = [0, 0, 0]
@@ -43,7 +43,7 @@ def setup():
 def draw():
     global level_one, room
     background(0)
-
+    #flag setter for changing the screen and its components without interference, allows for future edits and additions 
     if room == 0:
         image(mountain_img, 0, 0, 1280, 720)
         textFont(defaultFont)
@@ -79,7 +79,8 @@ def draw():
 
 
 def keyPressed():
-    global room, levelFlag
+    #only used for the first screen
+    global room
     if room == 0 and key == ' ':
         room += 1
 
@@ -104,6 +105,7 @@ def mousePressed():
 
 
 def drawing():
+    #this function draws the circles that players can click to enter and play a certain level
     global room, levelRoom
     for x in levels:
         if x == 1:
@@ -130,19 +132,8 @@ def drawing():
                 room = 2
                 levelRoom = 3
 
-"""
-def drawingTest():
-    global room, levelRoom, level_one
-    mouseX = 216
-    mouseY = 488
-    mousePressed = True
-    not level_one.playing_level
-    drawing()
-    assert room == 2
- """
-
-
 def levelStatus():
+    #another flag setter that controls the levels accordingly
     global room, levelRoom
     if levelRoom == 1:
         firstLevel()
@@ -155,6 +146,7 @@ def levelStatus():
 
 
 def levelStatusTest():
+    #tests to see if the function responds to chaning levelRooms 
     global levelRoom, room
     levelRoom = 4
     levelStatus()
@@ -164,6 +156,7 @@ def levelStatusTest():
 
 
 def starCalculatorTest():
+    #tests to see if the star calculator works 
     assert starCalculator(18) == 3
     assert starCalculator(6) == 1
     assert starCalculator(12) == 2
@@ -213,7 +206,8 @@ def show_tutorial():
 
 
 def yesButton():
-    global room, yesLevel
+    #runs during each level, initiates the current level  
+    global room
     fill(0, 250, 12)
     rect(740, 375, 250, 150)
     if mouseX in range(740, 1010) and mouseY in range(375, 425) and mousePressed:
@@ -221,6 +215,7 @@ def yesButton():
 
 
 def exitButtonLevels():
+    #allows player to exit out of level and possibly select another one 
     global room
     fill(210, 0, 0)
     ellipse(900, 200, 50, 50)
@@ -229,7 +224,7 @@ def exitButtonLevels():
 
 
 def firstLevel():
-    print("THIS RUNS OKAY!")
+    print("THIS RUNS OKAY!") #testing to see if the function runs 
     global level, room
     image(info_img, 0, 0, 1280, 720)
     textFont(defaultFont)
@@ -239,6 +234,7 @@ def firstLevel():
 
 
 def starTesting():
+    #test to see if the addition of stars throughout entire game works without any issue
     global stars, levelRoom, room, proceedFlag
     if proceedFlag is True:
         if mouseX in range(0, 200) and mouseY in range(0, 200) and mousePressed:
@@ -249,6 +245,8 @@ def starTesting():
         room = 2
 
 """
+was not used, but prevents players from player a certain level without completing the previous level first 
+
 def reverseLevel():
     global room, levelRoom, stars, proceedFlag
     if levelRoom == 1:
@@ -267,6 +265,7 @@ def reverseLevel():
 
 
 def starCalculator(lives):
+    #function to take in lives and return the number of stars they get for that level 
     if lives >= 18:
         return 3
     elif lives <= 7:
