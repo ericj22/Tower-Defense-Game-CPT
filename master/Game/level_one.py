@@ -43,7 +43,6 @@ class Level_One:
     quit = False
     completed = False
     degree = 0
-    mouse_correct = False
 
     def spawn_enemies(self):
         """
@@ -331,5 +330,5 @@ class Level_One:
         """
         Allows the user to quit the level if the level is over
         """
-        if mouseX in range(480, 800) and mouseY in range(480, 550):
+        if mouseX in range(480, 800) and mouseY in range(380, 450):
             self.quit = True
