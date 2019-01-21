@@ -250,7 +250,7 @@ class Level_One:
                     self.gold -= tower.upgrade_cost
                     tower.upgrade()
                     tower.is_selected = False
-                if tower.tier == 2 and not self.tier_three_locked:
+                elif tower.tier == 2 and not self.tier_three_locked:
                     self.gold -= tower.upgrade_cost
                     tower.upgrade()
                     tower.is_selected = False
