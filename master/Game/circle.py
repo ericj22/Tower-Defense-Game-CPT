@@ -24,11 +24,11 @@ class Circle(Tower):
         self.tier += 1
         if self.tier == 2:
             self.damage = 45
-            self.projectile_speed = 1.5
+            self.projectile_speed = 1.6
             self.upgrade_cost = 160
         if self.tier == 3:
             self.damage = 65
-            self.projectile_speed += 0.2
+            self.projectile_speed += 0.3
         self.tower_range += 15
 
     def draw_tower(self):
