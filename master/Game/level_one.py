@@ -204,6 +204,7 @@ class Level_One:
         """
         Builds a new tower in the selected land plot
         """
+        # Builds Circle
         if self.gold >= 70 and self.build_tower and mouseX in range(135, 165) and mouseY in range(625, 655):
             self.towers.append(Circle(self.build_loc[0], self.build_loc[1]))
             self.gold -= 70
@@ -213,6 +214,7 @@ class Level_One:
                     self.land_plots.remove(plot)
             self.build_loc.pop(0)
             self.build_loc.pop(0)
+        # Builds Square
         if self.gold >= 90 and self.build_tower and mouseX in range(235, 265) and mouseY in range(625, 655):
             self.towers.append(Square(self.build_loc[0], self.build_loc[1]))
             self.gold -= 90
@@ -222,6 +224,7 @@ class Level_One:
                     self.land_plots.remove(plot)
             self.build_loc.pop(0)
             self.build_loc.pop(0)
+        # Builds Ice Tower
         if self.gold >= 80 and self.build_tower and mouseX in range(335, 365) and mouseY in range(625, 655):
             self.towers.append(Ice_Tower(self.build_loc[0], self.build_loc[1]))
             self.gold -= 80
