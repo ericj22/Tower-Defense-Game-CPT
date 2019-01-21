@@ -12,6 +12,10 @@ import time
 
 
 class Tester:
+    """
+    Tester class that runs in setup()
+    Tests the functions within each class
+    """
     circle = Circle(100, 100)
     square = Square(100, 100)
     ice_tower = Ice_Tower(100, 100)
@@ -22,8 +26,10 @@ class Tester:
     level_one = Level_One()
     enemies = []
 
-    # Testing Towers
     def test_tower(self):
+        """
+        Function which tests the functions of the Tower classes
+        """
         # Tests initialization of tower
         assert self.circle.tier == 1, "Should start at tier 1"
         assert self.circle.xLoc == 100, "x value should equal to passed parameters"
@@ -118,8 +124,10 @@ class Tester:
         assert self.enemies[0].health == 380, "Targeting should have reset, projectile should not have hit"
         assert self.circle.enemy_targeted is False, "Targeting should have reset"
 
-    # Testing Enemies
     def test_enemy(self):
+        """
+        Function which tests the functions of the Enemy classes
+        """
         # Test initializing enemy
         assert self.yellow_dwarf.xLoc == 100, "Should equal value passed in"
         assert self.red_orc.yLoc == 100, "Should equal value passed in"
@@ -169,6 +177,11 @@ class Tester:
         assert self.red_orc.is_living() is False, "RO should be dead with any health below 0"
 
     def test_level_one(self):
+        """
+        Function which tests the functions from the Level_One class
+        Note: Limited functions appear here as they rely on mouseX and mouseY
+        to do anything
+        """
         assert self.level_one.tier_two_locked is True, "Tier two should be locked at wave 0"
         assert self.level_one.tier_three_locked is True, "Tier three should be locked at wave 0"
         self.level_one.wave = 3
