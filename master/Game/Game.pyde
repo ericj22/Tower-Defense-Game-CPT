@@ -9,7 +9,7 @@ from test import Tester
 from level_one import Level_One
 
 level_one = Level_One()
-levels = [1, 2, 3] #there are currently three levels, but more could be added to the list for future playability 
+levels = [1, 2, 3]  # there are currently three levels, but more could be added to the list for future playability
 room = 0
 levelRoom = 0
 stars = [0, 0, 0]
@@ -24,7 +24,7 @@ def setup():
     tester.test_tower()
     tester.test_enemy()
     tester.test_level_one()
-    
+
     regularFont = createFont("Lucida Sans Demibold", 12)
     tower_info = loadImage("tower_info.png")
     enemy_info = loadImage("enemy_info.png")
@@ -43,7 +43,7 @@ def setup():
 def draw():
     global level_one, room
     background(0)
-    #flag setter for changing the screen and its components without interference, allows for future edits and additions 
+    # flag setter for changing the screen and its components without interference, allows for future edits and additions
     if room == 0:
         image(mountain_img, 0, 0, 1280, 720)
         textFont(defaultFont)
@@ -79,7 +79,7 @@ def draw():
 
 
 def keyPressed():
-    #only used for the first screen
+    # only used for the first screen
     global room
     if room == 0 and key == ' ':
         room += 1
@@ -105,7 +105,7 @@ def mousePressed():
 
 
 def drawing():
-    #this function draws the circles that players can click to enter and play a certain level
+    # this function draws the circles that players can click to enter and play a certain level
     global room, levelRoom
     for x in levels:
         if x == 1:
@@ -132,8 +132,9 @@ def drawing():
                 room = 2
                 levelRoom = 3
 
+
 def levelStatus():
-    #another flag setter that controls the levels accordingly
+    # another flag setter that controls the levels accordingly
     global room, levelRoom
     if levelRoom == 1:
         firstLevel()
@@ -146,7 +147,7 @@ def levelStatus():
 
 
 def levelStatusTest():
-    #tests to see if the function responds to chaning levelRooms 
+    # tests to see if the function responds to chaning levelRooms
     global levelRoom, room
     levelRoom = 4
     levelStatus()
@@ -156,7 +157,7 @@ def levelStatusTest():
 
 
 def starCalculatorTest():
-    #tests to see if the star calculator works 
+    # tests to see if the star calculator works
     assert starCalculator(18) == 3
     assert starCalculator(6) == 1
     assert starCalculator(12) == 2
@@ -206,7 +207,7 @@ def show_tutorial():
 
 
 def yesButton():
-    #runs during each level, initiates the current level  
+    # runs during each level, initiates the current level
     global room
     fill(0, 250, 12)
     rect(740, 375, 250, 150)
@@ -215,7 +216,7 @@ def yesButton():
 
 
 def exitButtonLevels():
-    #allows player to exit out of level and possibly select another one 
+    # allows player to exit out of level and possibly select another one
     global room
     fill(210, 0, 0)
     ellipse(900, 200, 50, 50)
@@ -224,7 +225,7 @@ def exitButtonLevels():
 
 
 def firstLevel():
-    print("THIS RUNS OKAY!") #testing to see if the function runs 
+    print("THIS RUNS OKAY!")  # testing to see if the function runs
     global level, room
     image(info_img, 0, 0, 1280, 720)
     textFont(defaultFont)
@@ -234,7 +235,7 @@ def firstLevel():
 
 
 def starTesting():
-    #test to see if the addition of stars throughout entire game works without any issue
+    # test to see if the addition of stars throughout entire game works without any issue
     global stars, levelRoom, room, proceedFlag
     if proceedFlag is True:
         if mouseX in range(0, 200) and mouseY in range(0, 200) and mousePressed:
@@ -245,7 +246,7 @@ def starTesting():
         room = 2
 
 """
-was not used, but prevents players from player a certain level without completing the previous level first 
+was not used, but prevents players from player a certain level without completing the previous level first
 
 def reverseLevel():
     global room, levelRoom, stars, proceedFlag
@@ -265,7 +266,7 @@ def reverseLevel():
 
 
 def starCalculator(lives):
-    #function to take in lives and return the number of stars they get for that level 
+    # function to take in lives and return the number of stars they get for that level
     if lives >= 18:
         return 3
     elif lives <= 7:
