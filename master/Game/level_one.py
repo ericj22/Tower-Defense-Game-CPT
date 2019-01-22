@@ -52,9 +52,9 @@ class Level_One:
         if not self.done_spawning:
             if self.wave == 1:
                 for i in range(3):
-                    self.enemies.append(Yellow_Dwarf(random.randint(557, 563), -10-(i*15)))
+                    self.enemies.append(Yellow_Dwarf(randomX, -10-(i*15)))
                 for i in range(4):
-                    self.enemies.append(Yellow_Dwarf(random.randint(557, 563), -140-(i*15)))
+                    self.enemies.append(Yellow_Dwarf(randomX, -140-(i*15)))
                 self.done_spawning = True
             if self.wave == 2:
                 self.enemies.append(Yellow_Dwarf(563, -10))
@@ -62,62 +62,64 @@ class Level_One:
                 self.enemies.append(Red_Orc(560, -45))
                 self.enemies.append(Red_Orc(561, -65))
                 for i in range(4):
-                    self.enemies.append(Yellow_Dwarf(random.randint(557, 563), -160-(i*15)))
+                    self.enemies.append(Yellow_Dwarf(randomX, -160-(i*15)))
                 self.done_spawning = True
             if self.wave == 3:
                 self.enemies.append(Orange_Giant(560, -10))
                 for i in range(3):
-                    self.enemies.append(Yellow_Dwarf(random.randint(557, 563), -200-(i*15)))
+                    self.enemies.append(Yellow_Dwarf(randomX, -200-(i*15)))
                 for i in range(2):
-                    self.enemies.append(Red_Orc(random.randint(557, 563), -260-(i*15)))
+                    self.enemies.append(Red_Orc(randomX, -260-(i*15)))
                 self.done_spawning = True
             if self.wave == 4:
                 for i in range(3):
-                    self.enemies.append(Red_Orc(random.randint(557, 563), -10-(i*17)))
+                    enemy_x = random.randint(557, 563)
+                    self.enemies.append(Red_Orc(randomX, -10-(i*17)))
                 for i in range(6):
-                    self.enemies.append(Yellow_Dwarf(random.randint(557, 563), -60-(i*15)))
+                    self.enemies.append(Yellow_Dwarf(randomX, -60-(i*15)))
                 for i in range(3):
-                    self.enemies.append(Red_Orc(random.randint(557, 563), -230-(i*21)))
+                    enemy_x = random.randint(557, 563)
+                    self.enemies.append(Red_Orc(randomX, -230-(i*21)))
                 self.done_spawning = True
             if self.wave == 5:
                 for i in range(3):
-                    self.enemies.append(Red_Orc(random.randint(557, 563), -10-(i*17)))
+                    self.enemies.append(Red_Orc(randomX, -10-(i*17)))
                 for i in range(2):
-                    self.enemies.append(Pink_Bandit(random.randint(557, 563), -10-(i*20)))
+                    self.enemies.append(Pink_Bandit(randomX, -10-(i*20)))
                 for i in range(5):
-                    self.enemies.append(Red_Orc(random.randint(557, 563), -200-(i*20)))
+                    self.enemies.append(Red_Orc(randomX, -200-(i*20)))
                 for i in range(6):
-                    self.enemies.append(Yellow_Dwarf(random.randint(557, 563), -330-(i*15)))
+                    self.enemies.append(Yellow_Dwarf(randomX, -330-(i*15)))
                 self.done_spawning = True
             if self.wave == 6:
                 for i in range(2):
-                    self.enemies.append(Red_Orc(random.randint(557, 563), -10-(i*30)))
+                    self.enemies.append(Red_Orc(randomX, -10-(i*30)))
                 for i in range(3):
-                    self.enemies.append(Pink_Bandit(random.randint(557, 563), -100-(i*20)))
+                    self.enemies.append(Pink_Bandit(randomX, -100-(i*20)))
                 for i in range(2):
-                    self.enemies.append(Orange_Giant(random.randint(557, 563), -160-(i*30)))
+                    self.enemies.append(Orange_Giant(randomX, -160-(i*30)))
                 for i in range(6):
-                    self.enemies.append(Yellow_Dwarf(random.randint(557, 563), -300-(i*15)))
+                    self.enemies.append(Yellow_Dwarf(randomX, -300-(i*15)))
                 for i in range(2):
-                    self.enemies.append(Red_Orc(random.randint(557, 563), -420-(i*30)))
+                    self.enemies.append(Red_Orc(randomX, -420-(i*30)))
                 self.done_spawning = True
             if self.wave == 7:
                 for i in range(6):
-                    self.enemies.append(Yellow_Dwarf(random.randint(557, 563), -10-(i*15)))
+                    self.enemies.append(Yellow_Dwarf(randomX, -10-(i*15)))
                 for i in range(2):
-                    self.enemies.append(Pink_Bandit(random.randint(557, 563), -100-(i*20)))
+                    self.enemies.append(Pink_Bandit(randomX, -100-(i*20)))
                 for i in range(2):
-                    self.enemies.append(Orange_Giant(random.randint(557, 563), -180-(i*30)))
+                    self.enemies.append(Orange_Giant(randomX, -180-(i*30)))
                 for i in range(3):
-                    self.enemies.append(Red_Orc(random.randint(557, 563), -250-(i*20)))
+                    self.enemies.append(Red_Orc(randomX, -250-(i*20)))
                 for i in range(3):
-                    self.enemies.append(Orange_Giant(random.randint(557, 563), -340-(i*30)))
+                    self.enemies.append(Orange_Giant(randomX, -340-(i*30)))
                 for i in range(6):
-                    self.enemies.append(Yellow_Dwarf(random.randint(557, 563), -480-(i*15)))
+                    self.enemies.append(Yellow_Dwarf(randomX, -480-(i*15)))
                 for i in range(3):
-                    self.enemies.append(Red_Orc(random.randint(557, 563), -600-(i*20)))
+                    self.enemies.append(Red_Orc(randomX, -600-(i*20)))
                 for i in range(2):
-                    self.enemies.append(Pink_Bandit(random.randint(557, 563), -700-(i*15)))
+                    self.enemies.append(Pink_Bandit(randomX, -700-(i*15)))
                 self.done_spawning = True
 
         # Drawing enemies
@@ -161,8 +163,8 @@ class Level_One:
 
     def build_towers(self):
         """
-        Draws all towers, searches for nearby enemies, targets enemies, and attacks
-        targets
+        Draws all towers, searches for nearby enemies, targets enemies,
+        and attacks targets
         """
         for tower in self.towers:
             tower.draw_tower()
@@ -176,15 +178,18 @@ class Level_One:
                     elif tower.tier == 2 and self.tier_three_locked:
                         text("Upgrade locked", tower.xLoc-45, tower.yLoc+40)
                     else:
-                        text("Upgrade cost: " + str(tower.upgrade_cost), tower.xLoc-60, tower.yLoc+40)
+                        msg_loc = [tower.xLoc-60, tower.yLoc+40]
+                        cost = tower.upgrade_cost
+                        text(f"Upgrade cost: {cost}", msg_loc[0], msg_loc[1])
                 else:
                     text("Tower at max level!", tower.xLoc-50, tower.yLoc+40)
-            if tower.targeted_enemy is not None and not tower.enemy_targeted:
+            has_trgt_enmy = tower.targeted_enemy is not None
+            enemy_targetable = not tower.targeted_enemy.is_invisible
+            if has_trgtd_enmy is not None and not tower.enemy_targeted:
                 tower.target_enemy()
-            elif tower.enemy_targeted and tower.targeted_enemy is not None and not tower.targeted_enemy.is_invisible:
+            elif tower.enemy_targeted and has_trgtd_enmy and enemy_targetable:
                 tower.shoot_projectile()
                 tower.detect_enemy_hit()
-                # Note: Make it so that multiple towers can attack at the same time
             else:
                 tower.find_enemy(self.enemies)
 
@@ -205,32 +210,46 @@ class Level_One:
         Builds a new tower in the selected land plot
         """
         # Builds Circle
-        if self.gold >= 70 and self.build_tower and mouseX in range(135, 165) and mouseY in range(625, 655):
+        mouseX_crct = mouseX in range(135, 165)
+        mouse_correct = mouseX_crct and mouseY in range(625, 655)
+        if self.gold >= 70 and self.build_tower and mouse_cprrect:
             self.towers.append(Circle(self.build_loc[0], self.build_loc[1]))
             self.gold -= 70
             self.build_tower = False
             for plot in self.land_plots:
-                if plot[0] == self.build_loc[0] and plot[1] == self.build_loc[1]:
+                correct_x = plot[0] == self.build_loc[0]
+                correct_y = plot[1] == self.build_loc[1]
+                if correct_x and correct_y:
                     self.land_plots.remove(plot)
             self.build_loc.pop(0)
             self.build_loc.pop(0)
+
         # Builds Square
-        if self.gold >= 90 and self.build_tower and mouseX in range(235, 265) and mouseY in range(625, 655):
+        mouseX_crct = mouseX in range(235, 265)
+        mouse_correct = mouseX_crct and mouseY in range(625, 655)
+        if self.gold >= 90 and self.build_tower and mouse_correct:
             self.towers.append(Square(self.build_loc[0], self.build_loc[1]))
             self.gold -= 90
             self.build_tower = False
             for plot in self.land_plots:
-                if plot[0] == self.build_loc[0] and plot[1] == self.build_loc[1]:
+                correct_x = plot[0] == self.build_loc[0]
+                correct_y = plot[1] == self.build_loc[1]
+                if correct_x and correct_y:
                     self.land_plots.remove(plot)
             self.build_loc.pop(0)
             self.build_loc.pop(0)
+
         # Builds Ice Tower
-        if self.gold >= 80 and self.build_tower and mouseX in range(335, 365) and mouseY in range(625, 655):
+        mouseX_crct = mouseX in range(335, 365)
+        mouse_correct = mouseX_crct and mouseY in range(625, 655)
+        if self.gold >= 80 and self.build_tower and mouse_correct:
             self.towers.append(Ice_Tower(self.build_loc[0], self.build_loc[1]))
             self.gold -= 80
             self.build_tower = False
             for plot in self.land_plots:
-                if plot[0] == self.build_loc[0] and plot[1] == self.build_loc[1]:
+                correct_x = plot[0] == self.build_loc[0]
+                correct_y = plot[1] == self.build_loc[1
+                if correct_x and correct_y:
                     self.land_plots.remove(plot)
             self.build_loc.pop(0)
             self.build_loc.pop(0)
@@ -335,3 +354,7 @@ class Level_One:
         """
         if mouseX in range(480, 800) and mouseY in range(380, 450):
             self.quit = True
+
+
+    def randomX(self):
+        return random.randint(557, 563)
