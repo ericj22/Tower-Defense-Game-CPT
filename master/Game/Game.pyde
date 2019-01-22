@@ -9,7 +9,9 @@ from test import Tester
 from level_one import Level_One
 
 level_one = Level_One()
-levels = [1, 2, 3]  # there are currently three levels, but more could be added to the list for future playability
+levels = [1, 2, 3]
+# there are currently three levels, but more could be
+# added to the list for future playability
 room = 0
 levelRoom = 0
 stars = [0, 0, 0]
@@ -17,7 +19,8 @@ proceedFlag = False
 
 
 def setup():
-    global tower_info, enemy_info, tutorial_page_2, regularFont, mountain_img, defaultFont, map_img, info_img, upgrades_popup, info_img_2
+    global tower_info, enemy_info, tutorial_page_2, regularFont, mountain_img
+    global defaultFont, map_img, info_img, upgrades_popup, info_img_2
     size(1280, 720)
     noStroke()
     tester = Tester()
@@ -43,7 +46,8 @@ def setup():
 def draw():
     global level_one, room
     background(0)
-    # flag setter for changing the screen and its components without interference, allows for future edits and additions
+    # flag setter for changing the screen and its components
+    # without interference, allows for future edits and additions
     if room == 0:
         image(mountain_img, 0, 0, 1280, 720)
         textFont(defaultFont)
@@ -87,9 +91,8 @@ def keyPressed():
 
 def mousePressed():
         """
-        Increments the wave, allows for user to click towers and upgrade/build new ones
-        Note: This function is long as placing code elsewhere seems to cause the code to potentially
-        run multiple times
+        Increments the wave, allows for user to click towers and upgrade/build
+        new ones
         """
         global level_one
         if level_one.playing_level:
@@ -105,7 +108,10 @@ def mousePressed():
 
 
 def drawing():
-    # this function draws the circles that players can click to enter and play a certain level
+    """
+    this function draws the circles that players
+    can click to enter and play a certain level
+    """
     global room, levelRoom
     for x in levels:
         if x == 1:
@@ -114,21 +120,27 @@ def drawing():
             else:
                 fill(255, 255, 120)
             ellipse(265, 502, 100, 50)
-            if not level_one.playing_level and mouseX in range(215, 315) and mouseY in range(477, 527) and mousePressed:
+            mouseX_crct = mouseX in range(215, 315)
+            mouseY_crct = mouseY in range(477, 527)
+            if mouseX_crct and mouseY_crct and mousePressed:
                 room = 2
                 levelRoom = 1
 
         elif x == 2:
             fill(255, 255, 120)
             ellipse(363, 385, 100, 50)
-            if not level_one.playing_level and mouseX in range(313, 413) and mouseY in range(360, 410) and mousePressed:
+            mouseX_crct = mouseX in range(313, 413)
+            mouseY_crct = mouseY in range(360, 410)
+            if mouseX_crct and mouseY_crct and mousePressed:
                 room = 2
                 levelRoom = 2
 
         elif x == 3:
             fill(255, 255, 120)
-            ellipse(611, 485, 100, 50)
-            if not level_one.playing_level and mouseX in range(561, 661) and mouseY in range(460, 510) and mousePressed:
+            ellipse(611, 385, 100, 50)
+            mouseX_crct = mouseX in range(561, 661)
+            mouseY_crct = mouseY in range(360, 410)
+            if mouseX_crct and mouseY_crct and mousePressed:
                 room = 2
                 levelRoom = 3
 
@@ -211,7 +223,9 @@ def yesButton():
     global room
     fill(0, 250, 12)
     rect(740, 375, 250, 150)
-    if mouseX in range(740, 1010) and mouseY in range(375, 425) and mousePressed:
+    mouseX_crct = mouseX in range(740, 1010)
+    mouseY_crct = mouseY in range(375, 425)
+    if mouseX_crct and mouseY_crct and mousePressed:
         room = 3
 
 
@@ -220,7 +234,9 @@ def exitButtonLevels():
     global room
     fill(210, 0, 0)
     ellipse(900, 200, 50, 50)
-    if mouseX in range(875, 925) and mouseY in range(175, 225) and mousePressed:
+    mouseX_crct = mouseX in range(875, 925)
+    mouseY_crct = mouseY in range(175, 225)
+    if mouseX_crct and mouseY_crct and mousePressed:
         room = 1
 
 
@@ -235,18 +251,24 @@ def firstLevel():
 
 
 def starTesting():
-    # test to see if the addition of stars throughout entire game works without any issue
+    # test to see if the addition of stars
+    # throughout entire game works without any issue
     global stars, levelRoom, room, proceedFlag
+    mouseX_crct = mouseX in range(200, 300)
+    mouseY_crct = mouseY in range(200, 300)
     if proceedFlag is True:
-        if mouseX in range(0, 200) and mouseY in range(0, 200) and mousePressed:
+        mouseX_crct = mouseX in range(0, 200)
+        mouseY_crct = mouseY in range(0, 200)
+        if mouseX_crct and mouseY_crct and mousePressed:
             stars[levelRoom-1] = 3
             room = 1
 
-    elif mouseX in range(200, 300) and mouseY in range(200, 300) and mousePressed:
+    elif mouseX_crct and mouseY_crct and mousePressed:
         room = 2
 
 """
-was not used, but prevents players from player a certain level without completing the previous level first
+was not used, but prevents players from player a certain
+level without completing the previous level first
 
 def reverseLevel():
     global room, levelRoom, stars, proceedFlag
@@ -266,7 +288,8 @@ def reverseLevel():
 
 
 def starCalculator(lives):
-    # function to take in lives and return the number of stars they get for that level
+    # function to take in lives and return the
+    # number of stars they get for that level
     if lives >= 18:
         return 3
     elif lives <= 7:
