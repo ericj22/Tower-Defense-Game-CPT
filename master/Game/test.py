@@ -46,7 +46,7 @@ class Tester:
         # Tests tower upgrade()
         self.circle.upgrade()
         assert self.circle.tier == 2, "Circle: should increase tower tier by one"
-        assert self.circle.projectile_speed == 1.5, "Circle: should increase projectile speed by 0.1"
+        assert self.circle.projectile_speed == 1.6, "Circle: should increase projectile speed by 0.1"
         assert self.circle.tower_range == 100, "Circle: should increase range by 15"
         assert self.circle.upgrade_cost == 160, "Circle: upgrade should cost 160 for tier 3"
         self.square.upgrade()
